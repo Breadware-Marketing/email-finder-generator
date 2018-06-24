@@ -1,0 +1,14 @@
+# Compiled Python files
+*.pyc
+
+# Specific Folders
+bin/
+include/
+lib/
+__pycache__/
+.vscode/
+
+# Specific Files
+.Python
+pip-selfcheck.json
+application/config.py

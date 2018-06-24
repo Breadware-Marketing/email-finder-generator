@@ -1,0 +1,62 @@
+<html>
+
+<head>
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <div class="header">
+    <a href="/">
+      <div class="header--logo">
+
+      </div>
+    </a>
+  </div>
+  {% block content %}
+  <div class="row">
+    <div class="col-md-12">
+      <div class="outside">
+        <form action="" method="post" name="login">
+          <div class="inner-form">
+            {{ form.hidden_tag() }}
+            <div class="center">
+              <h1>Breadware Email Search</h1>
+              <h4>If something goes wrong tell Ed</h4>
+            </div>
+            <div class="row">
+              <div class="container">
+                <div class="input-container">
+                  {{ form.full_name.label }} {{ form.full_name(size=100, placeholder='Example - Larry Crapo') }}
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="container">
+                <div class="input-container">
+                  {{ form.company_url.label }} {{ form.company_url(size=100, placeholder='Example - breadware.com') }}
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="container">
+                {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+                <h4 class="center">{{ message }}</h4>
+                {% endfor %} {% endif %} {% endwith %}
+              </div>
+            </div>
+            <div class="row">
+              <div class="container">
+                <div class="input-container">
+                  {{ form.submit() }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+</body>
+
+</html>
