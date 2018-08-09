@@ -1,7 +1,7 @@
 from pyhunter import PyHunter
 import os
 
-hunter = PyHunter(os.environ.get('email_hunter')
+hunter = PyHunter(os.environ.get('email_hunter'))
 
 def get_remaining_calls():
     info = hunter.account_information()
